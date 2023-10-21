@@ -8,7 +8,6 @@ import textwrap
 
 load_dotenv()
 
-os.environ['OPENAI_KEY'] = "OPENAI_KEY"
 openai.api_key = os.getenv('OPENAI_KEY')
 
 def prepare_data_for_finetuning(csv_file, jsonl_output):
