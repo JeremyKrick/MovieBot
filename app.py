@@ -12,7 +12,7 @@ os.environ['OPENAI_KEY'] = "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"
 openai.api_key = os.getenv('OPENAI_KEY')
 
 def prepare_data_for_finetuning(csv_file, jsonl_output):
-    data = pd.read_csv(csv_file).head(500)
+    data = pd.read_csv(csv_file).head(50000)
     new_df = pd.DataFrame({'Completion': data['Text'].iloc[::2].values, 'Prompt': data['Text'].iloc[1::2].values})
     output = []
     for index, row in new_df.iterrows():
